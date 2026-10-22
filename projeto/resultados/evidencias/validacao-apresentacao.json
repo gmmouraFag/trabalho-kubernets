@@ -1,0 +1,35 @@
+{
+  "slides": 16,
+  "graficos_nativos": {
+    "detectedOwnerSlides": [
+      13
+    ],
+    "detectedChartCount": 2,
+    "targetApplication": "portable",
+    "sourceChartOwnersExplicitlyDeclared": true,
+    "validatorRan": true,
+    "passed": true
+  },
+  "fontes": {
+    "basis": "design",
+    "approvedFamilies": [
+      "Arial"
+    ],
+    "scriptFonts": {},
+    "referenceSha256": null,
+    "referenceFontsVerifiedInEncodedText": false,
+    "checked_text_script_count": 152,
+    "native_font_rendering_verified": false,
+    "observed_font_families": [
+      "Arial"
+    ],
+    "observed_font_use_counts": {
+      "Arial": 152
+    },
+    "passed": true,
+    "performed": true
+  },
+  "sha256": "f2cb09523c3fcaeeb01e21f83c468b0dd13a7c54647d3f7cc44cf36df1daced7",
+  "arquivo": "apresentacao/RotaExpress.pptx",
+  "revisao_visual": "16 slides inspecionados em PNG; diagramas revistos apos corrigir direcao das setas; revisao no PowerPoint e importacao no Canva nao executadas"
+}

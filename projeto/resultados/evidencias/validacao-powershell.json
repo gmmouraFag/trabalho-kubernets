@@ -1,0 +1,79 @@
+[
+  {
+    "Arquivo": "comprovar-final.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "comum.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "encerrar-ambiente.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "executar-testes.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "iniciar-cluster.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "instalar-dependencias.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "publicar-aplicacao.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "testar-capacidade.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "testar-rollback.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "validar-aplicacao.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  },
+  {
+    "Arquivo": "verificar-ambiente.ps1",
+    "Valido": true,
+    "Erros": [
+      null
+    ]
+  }
+]

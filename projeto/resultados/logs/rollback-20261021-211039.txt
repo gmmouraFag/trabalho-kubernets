@@ -1,0 +1,36 @@
+**********************
+PowerShell transcript start
+Start time: 20261021211039
+Username: DESKTOP-H3I4SRO\Gustavo
+RunAs User: DESKTOP-H3I4SRO\Gustavo
+Configuration Name: 
+Machine: DESKTOP-H3I4SRO (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Users\Cliente\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+. '.\scripts\validar-aplicacao.ps1'; . '.\scripts\testar-rollback.ps1'
+Process ID: 3460
+PSVersion: 7.6.5
+PSEdition: Core
+GitCommitId: 7.6.5
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is resultados/logs/rollback-20261021-211039.txt
+> kubectl --context=ops-lab --namespace=ops-lab set image deployment/rotas rotas=rotas:1.1
+
+
+> kubectl --context=ops-lab --namespace=ops-lab run teste-rollback --rm -i --restart=Never --image=busybox:1.36 -- wget -qO- http://rotas:8000/healthz
+
+> kubectl --context=ops-lab --namespace=ops-lab rollout undo deployment/rotas
+
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+
+> kubectl --context=ops-lab --namespace=ops-lab rollout history deployment/rotas
+
+**********************
+PowerShell transcript end
+End time: 20261021211142
+**********************

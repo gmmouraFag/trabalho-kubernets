@@ -1,0 +1,53 @@
+**********************
+PowerShell transcript start
+Start time: 20261021210303
+Username: DESKTOP-H3I4SRO\Gustavo
+RunAs User: DESKTOP-H3I4SRO\Gustavo
+Configuration Name: 
+Machine: DESKTOP-H3I4SRO (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Users\Cliente\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+. '.\scripts\iniciar-cluster.ps1'
+Process ID: 3768
+PSVersion: 7.6.5
+PSEdition: Core
+GitCommitId: 7.6.5
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is resultados/logs/cluster-20261021-210303.txt
+> docker version
+
+> docker info
+
+> minikube start -p ops-lab --driver=docker --cpus=3 --memory=3072
+
+> minikube profile ops-lab
+
+> minikube status -p ops-lab
+
+> kubectl config get-contexts
+
+> kubectl --context=ops-lab --namespace=ops-lab cluster-info
+
+> kubectl --context=ops-lab --namespace=ops-lab get nodes -o wide
+
+> kubectl --context=ops-lab --namespace=ops-lab get pods -A
+
+> kubectl --context=ops-lab --namespace=ops-lab apply -f k8s/namespace.yaml
+
+> kubectl config set-context ops-lab --namespace=ops-lab
+
+> minikube addons enable metrics-server -p ops-lab
+
+> kubectl --context=ops-lab --namespace=ops-lab wait --for=condition=Ready node/ops-lab --timeout=180s
+
+> kubectl --context=ops-lab --namespace=ops-lab get namespace ops-lab
+
+**********************
+PowerShell transcript end
+End time: 20261021210724
+**********************

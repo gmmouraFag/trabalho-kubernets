@@ -1,0 +1,11 @@
+RotaExpress em http://localhost:65080
+aceito calculo_ms=177.2 total_aceitos=1 total_recusados=0
+aceito calculo_ms=0.0 total_aceitos=2 total_recusados=0
+recusado total_aceitos=2 total_recusados=1
+recusado total_aceitos=2 total_recusados=2
+recusado total_aceitos=2 total_recusados=3
+recusado total_aceitos=2 total_recusados=4aceito calculo_ms=171.6 total_aceitos=3 total_recusados=4
+
+recusado total_aceitos=3 total_recusados=5
+aceito calculo_ms=165.1 total_aceitos=4 total_recusados=5
+aceito calculo_ms=167.2 total_aceitos=5 total_recusados=5

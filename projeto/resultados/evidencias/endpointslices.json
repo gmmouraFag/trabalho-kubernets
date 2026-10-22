@@ -1,0 +1,66 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "addressType": "IPv4",
+            "apiVersion": "discovery.k8s.io/v1",
+            "endpoints": [
+                {
+                    "addresses": [
+                        "10.244.0.6"
+                    ],
+                    "conditions": {
+                        "ready": true,
+                        "serving": true,
+                        "terminating": false
+                    },
+                    "nodeName": "ops-lab",
+                    "targetRef": {
+                        "kind": "Pod",
+                        "name": "rotas-fc7784c5c-n7rh9",
+                        "namespace": "ops-lab",
+                        "uid": "78d59bb8-b818-4430-8419-d5da839e6d37"
+                    }
+                }
+            ],
+            "kind": "EndpointSlice",
+            "metadata": {
+                "annotations": {
+                    "endpoints.kubernetes.io/last-change-trigger-time": "2026-10-22T00:09:16Z"
+                },
+                "creationTimestamp": "2026-10-22T00:08:46Z",
+                "generateName": "rotas-",
+                "generation": 2,
+                "labels": {
+                    "endpointslice.kubernetes.io/managed-by": "endpointslice-controller.k8s.io",
+                    "kubernetes.io/service-name": "rotas"
+                },
+                "name": "rotas-nh295",
+                "namespace": "ops-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "Service",
+                        "name": "rotas",
+                        "uid": "8645967d-8950-4417-b314-91a4be1d5937"
+                    }
+                ],
+                "resourceVersion": "693",
+                "uid": "92adb905-86ba-46c5-9d9f-30ae4ae8e407"
+            },
+            "ports": [
+                {
+                    "name": "",
+                    "port": 8000,
+                    "protocol": "TCP"
+                }
+            ]
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

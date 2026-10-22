@@ -1,0 +1,34 @@
+[
+  {
+    "Endpoint": "/",
+    "HTTP": 200,
+    "Body": "<!doctype html><html lang=\"pt-BR\"><meta charset=\"utf-8\">\n<title>RotaExpress • Operações</title><style>\nbody{font:18px system-ui;max-width:850px;margin:40px auto;padding:20px;color:#18382a;background:#f5f8f6}\nh1{color:#004823}button,select{font:inherit;padding:10px;border-radius:8px;border:1px solid #99b5a5}\nbutton{background:#004823;color:white;cursor:pointer}section{background:white;border-radius:14px;padding:25px}\nsvg{width:100%;max-height:360px}small{display:block;color:#526158}#info{min-height:55px}</style>\n<h1>RotaExpress</h1><p>Uma pequena transportadora precisa visitar pontos de entrega e voltar ao depósito, percorrendo a menor distância possível.</p>\n<section><label>Entregas: <select id=\"n\"><option>7</option><option>8</option><option selected>9</option></select></label>\n<button id=\"go\">Calcular rota</button><p id=\"info\">O ponto 0 é o depósito. Clique para enviar uma solicitação à aplicação.</p>\n<svg id=\"mapa\" viewBox=\"0 0 110 110\" aria-label=\"Rota calculada\"></svg></section>\n<p><small>Protótipo didático: pontos fictícios, distâncias em linha reta, sem trânsito ou ruas. Cada pedido refaz o cálculo, sem cache.</small></p>\n<script>\ndocument.querySelector('#go').onclick=async()=>{\n const el=document.querySelector('#info'); el.textContent='Calculando…';\n try {const r=await fetch('/api/rota?paradas='+document.querySelector('#n').value);\n const d=await r.json(); if(!r.ok)throw Error(d.erro);\n el.textContent=`Distância: ${d.distancia} unidades | Cálculo: ${d.calculo_ms} ms | Atendido por: ${d.pod}`;\n let s='<polyline fill=\"none\" stroke=\"#326ce5\" stroke-width=\"0.8\" points=\"'+d.ordem.map(i=>d.pontos[i].join(',')).join(' ')+'\"/>';\n d.pontos.forEach((p,i)=>{s+=`<circle cx=\"${p[0]}\" cy=\"${p[1]}\" r=\"2\" fill=\"${i===0?'#e31e24':'#004823'}\"/><text x=\"${p[0]+3}\" y=\"${p[1]}\" font-size=\"4\">${i}</text>`});\n document.querySelector('#mapa').innerHTML=s;\n }catch(e){el.textContent='Não foi possível atender: '+e.message;}\n};</script></html>",
+    "Pod": [
+      "ad09ba5fb4e0"
+    ]
+  },
+  {
+    "Endpoint": "/healthz",
+    "HTTP": 200,
+    "Body": "{\"status\": \"ok\", \"pod\": \"ad09ba5fb4e0\"}",
+    "Pod": [
+      "ad09ba5fb4e0"
+    ]
+  },
+  {
+    "Endpoint": "/readyz",
+    "HTTP": 200,
+    "Body": "{\"status\": \"ok\", \"pod\": \"ad09ba5fb4e0\"}",
+    "Pod": [
+      "ad09ba5fb4e0"
+    ]
+  },
+  {
+    "Endpoint": "/api/rota?paradas=9",
+    "HTTP": 200,
+    "Body": "{\"pontos\": [[10, 10], [80, 20], [25, 70], [70, 85], [45, 25], [15, 45], [90, 55], [50, 95], [65, 45], [35, 55]], \"ordem\": [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0], \"distancia\": 299.03, \"paradas\": 9, \"pod\": \"ad09ba5fb4e0\", \"calculo_ms\": 172.1}",
+    "Pod": [
+      "ad09ba5fb4e0"
+    ]
+  }
+]

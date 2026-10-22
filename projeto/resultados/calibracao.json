@@ -1,0 +1,11 @@
+{
+  "duracao": 60,
+  "paradas": 9,
+  "hash_app": "B20A4D9BF018252C1D63336262AD74C2D9A0BBCF198F51DFAC7E1134FDEEEF4E",
+  "hash_job": "9E05B0BCFEACB64706DA70C70E32E57BFD5F1630C9E1CA3D9BFB1E3703C0FB1A",
+  "justificativa": "Piloto com 1 Pod: 120 rotas em 60 s (2,00/s), 66,75% de falhas, p95 436,19 ms e zero descartes. Ha sucessos e recusas informativos; demanda 6/s e proxima da capacidade nominal estimada de tres calculadores (~6/s), permitindo comparar 1, 2 e 3 Pods sem limitar o gerador.",
+  "taxa": 6,
+  "data": "2026-10-21T21:14:11.5213781-03:00",
+  "hash_deployment": "1680EEBD3F02828F2DFBBE68F7486D22C6112B26365996454EAF92EB33F3DA73",
+  "hash_carga": "C73B6BB67E7BCCA0E53E2F223CD31529970E83E115510B21C23E42E3A8E391B2"
+}

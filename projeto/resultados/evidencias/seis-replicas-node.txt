@@ -1,0 +1,94 @@
+Name:               ops-lab
+Roles:              control-plane
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ops-lab
+                    kubernetes.io/os=linux
+                    minikube.k8s.io/commit=7a9f6a841470a207de8cf4bafcccee0969d8ba10
+                    minikube.k8s.io/name=ops-lab
+                    minikube.k8s.io/primary=true
+                    minikube.k8s.io/updated_at=2026_10_21T21_06_57_0700
+                    minikube.k8s.io/version=v1.39.0
+                    node-role.kubernetes.io/control-plane=
+                    node.kubernetes.io/exclude-from-external-load-balancers=
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 21 Oct 2026 21:06:54 -0300
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ops-lab
+  AcquireTime:     <unset>
+  RenewTime:       Wed, 21 Oct 2026 21:28:03 -0300
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Wed, 21 Oct 2026 21:27:31 -0300   Wed, 21 Oct 2026 21:06:53 -0300   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Wed, 21 Oct 2026 21:27:31 -0300   Wed, 21 Oct 2026 21:06:53 -0300   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Wed, 21 Oct 2026 21:27:31 -0300   Wed, 21 Oct 2026 21:06:53 -0300   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Wed, 21 Oct 2026 21:27:31 -0300   Wed, 21 Oct 2026 21:07:23 -0300   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.49.2
+  Hostname:    ops-lab
+Capacity:
+  cpu:                12
+  ephemeral-storage:  1081101176832
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             15919916Ki
+  pods:               110
+Allocatable:
+  cpu:                12
+  ephemeral-storage:  1081101176832
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             15919916Ki
+  pods:               110
+System Info:
+  Machine ID:                 b7566eefbea02b7ce85821e86a97158b
+  System UUID:                b7566eefbea02b7ce85821e86a97158b
+  Boot ID:                    9e5db3fb-b98d-4d90-8839-d8d5f05fc5d7
+  Kernel Version:             6.18.54.1-microsoft-standard-WSL2
+  OS Image:                   Debian GNU/Linux 12 (bookworm)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://2.3.4
+  Kubelet Version:            v1.37.0
+PodCIDR:                      10.244.0.0/24
+PodCIDRs:                     10.244.0.0/24
+Non-terminated Pods:          (15 in total)
+  Namespace                   Name                               CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                               ------------  ----------  ---------------  -------------  ---
+  kube-system                 coredns-559f6c778d-cbrmf           100m (0%)     0 (0%)      70Mi (0%)        170Mi (1%)     21m
+  kube-system                 etcd-ops-lab                       100m (0%)     0 (0%)      100Mi (0%)       0 (0%)         21m
+  kube-system                 kindnet-mgdjb                      100m (0%)     100m (0%)   50Mi (0%)        50Mi (0%)      21m
+  kube-system                 kube-apiserver-ops-lab             250m (2%)     0 (0%)      0 (0%)           0 (0%)         21m
+  kube-system                 kube-controller-manager-ops-lab    200m (1%)     0 (0%)      0 (0%)           0 (0%)         21m
+  kube-system                 kube-proxy-8gkl2                   0 (0%)        0 (0%)      0 (0%)           0 (0%)         21m
+  kube-system                 kube-scheduler-ops-lab             100m (0%)     0 (0%)      0 (0%)           0 (0%)         21m
+  kube-system                 metrics-server-768f9f6999-8fbwj    100m (0%)     0 (0%)      200Mi (1%)       0 (0%)         21m
+  kube-system                 storage-provisioner                0 (0%)        0 (0%)      0 (0%)           0 (0%)         21m
+  ops-lab                     rotas-fc7784c5c-5sfk9              500m (4%)     500m (4%)   64Mi (0%)        128Mi (0%)     15s
+  ops-lab                     rotas-fc7784c5c-8xpkk              500m (4%)     500m (4%)   64Mi (0%)        128Mi (0%)     15s
+  ops-lab                     rotas-fc7784c5c-g26nv              500m (4%)     500m (4%)   64Mi (0%)        128Mi (0%)     3m56s
+  ops-lab                     rotas-fc7784c5c-n7rh9              500m (4%)     500m (4%)   64Mi (0%)        128Mi (0%)     19m
+  ops-lab                     rotas-fc7784c5c-ssrv2              500m (4%)     500m (4%)   64Mi (0%)        128Mi (0%)     15s
+  ops-lab                     rotas-fc7784c5c-vh829              500m (4%)     500m (4%)   64Mi (0%)        128Mi (0%)     2m31s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                3950m (32%)  3100m (25%)
+  memory             804Mi (5%)   988Mi (6%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-1Gi      0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+Events:
+  Type    Reason                   Age   From             Message
+  ----    ------                   ----  ----             -------
+  Normal  NodeHasSufficientMemory  21m   kubelet          Node ops-lab status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    21m   kubelet          Node ops-lab status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     21m   kubelet          Node ops-lab status is now: NodeHasSufficientPID
+  Normal  RegisteredNode           21m   node-controller  Node ops-lab event: Registered Node ops-lab in Controller
+  Normal  NodeReady                20m   kubelet          Node ops-lab status is now: NodeReady

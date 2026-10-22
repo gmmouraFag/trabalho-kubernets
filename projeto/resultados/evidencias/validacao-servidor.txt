@@ -1,0 +1,5 @@
+namespace/ops-lab unchanged (server dry run)
+deployment.apps/rotas configured (server dry run)
+deployment.apps/rotas configured (server dry run)
+service/rotas unchanged (server dry run)
+job.batch/carga created (server dry run)

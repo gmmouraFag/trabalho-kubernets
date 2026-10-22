@@ -1,0 +1,58 @@
+**********************
+PowerShell transcript start
+Start time: 20261021212907
+Username: DESKTOP-H3I4SRO\Gustavo
+RunAs User: DESKTOP-H3I4SRO\Gustavo
+Configuration Name: 
+Machine: DESKTOP-H3I4SRO (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Users\Cliente\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+. '.\scripts\comum.ps1'; K @('delete','job','carga','--wait=true'); . '.\scripts\testar-capacidade.ps1'; . '.\scripts\testar-rollback.ps1'; . '.\scripts\comprovar-final.ps1'
+Process ID: 27916
+PSVersion: 7.6.5
+PSEdition: Core
+GitCommitId: 7.6.5
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is resultados/logs/comprovacao-final-20261021-212907.txt
+> kubectl --context=ops-lab --namespace=ops-lab get deployment,replicaset,pods -o wide
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES      SELECTOR
+deployment.apps/rotas   1/1     1            1           20m   rotas        rotas:1.0   app=rotas
+
+NAME                               DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES      SELECTOR
+replicaset.apps/rotas-694c98487c   0         0         0       20m   rotas        rotas:1.0   app=rotas,pod-template-hash=694c98487c
+replicaset.apps/rotas-9687f8dc8    0         0         0       18m   rotas        rotas:1.1   app=rotas,pod-template-hash=9687f8dc8
+replicaset.apps/rotas-fc7784c5c    1         1         1       20m   rotas        rotas:1.0   app=rotas,pod-template-hash=fc7784c5c
+
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+pod/rotas-fc7784c5c-n7rh9   1/1     Running   0          20m   10.244.0.6   ops-lab   <none>           <none>
+> kubectl --context=ops-lab --namespace=ops-lab run comprovacao-http-212908 --restart=Never --image=busybox:1.36 -- sh -c for path in / /healthz /readyz /api/rota?paradas=9; do echo ENDPOINT:$path; wget -S -O- http://rotas:8000$path; done
+pod/comprovacao-http-212908 created
+> kubectl --context=ops-lab --namespace=ops-lab delete pod comprovacao-http-212908
+pod "comprovacao-http-212908" deleted from ops-lab namespace
+> docker run -d --rm -p 127.0.0.1:8000:8000 --name rotas-teste rotas:1.0
+ad09ba5fb4e01fc2a576912aec66b3e661417b78f7436eac5dad5e804af06644
+> docker stop rotas-teste
+rotas-teste
+> minikube image ls -p ops-lab
+registry.k8s.io/pause:3.10.2
+registry.k8s.io/kube-scheduler:v1.37.0
+registry.k8s.io/kube-proxy:v1.37.0
+registry.k8s.io/kube-controller-manager:v1.37.0
+registry.k8s.io/kube-apiserver:v1.37.0
+registry.k8s.io/etcd:3.7.0-0
+registry.k8s.io/coredns/coredns:v1.14.6
+gcr.io/k8s-minikube/storage-provisioner:v5
+docker.io/library/rotas:1.0
+docker.io/library/busybox:1.36
+docker.io/kindest/kindnetd:v20260820-69b56db7
+docker.io/kindest/kindnetd:v20250512-df8de77b
+docker.io/grafana/k6:1.0.0
+**********************
+PowerShell transcript end
+End time: 20261021212926
+**********************

@@ -1,0 +1,799 @@
+{
+  "validado": true,
+  "escopo": "Reconciliação de logs, condições e evidências. Metas de desempenho são avaliadas separadamente.",
+  "verificacoes": [
+    {
+      "verificacao": "Nove medições completas",
+      "passou": true,
+      "detalhes": [
+        "3pods-a",
+        "1pod-a",
+        "2pods-a",
+        "2pods-b",
+        "3pods-b",
+        "1pod-b",
+        "1pod-c",
+        "2pods-c",
+        "3pods-c"
+      ]
+    },
+    {
+      "verificacao": "Mesma TAXA",
+      "passou": true,
+      "detalhes": [
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6"
+      ]
+    },
+    {
+      "verificacao": "3pods-a: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 239,
+        "sucessos_por_s": 3.9833333333333334,
+        "falhas_pct": 33.79,
+        "p95_latencia_ok_ms": 437.25,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "3pods-a: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-a: recursos rotas-fc7784c5c-qw2r4",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-a: recursos rotas-fc7784c5c-sdlbb",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-a: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0,
+        "0b8396e7-a396-4e67-bc5d-89c59e9f48e2": 0,
+        "b43ec9ee-5243-40a5-aa66-2082cc19a0e4": 0
+      }
+    },
+    {
+      "verificacao": "3pods-a: endpoints prontos",
+      "passou": true,
+      "detalhes": 3
+    },
+    {
+      "verificacao": "3pods-a: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "3pods-a: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "3pods-a: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-n7rh9",
+        "carga-rcngm",
+        "rotas-fc7784c5c-qw2r4",
+        "rotas-fc7784c5c-sdlbb"
+      ]
+    },
+    {
+      "verificacao": "1pod-a: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 121,
+        "sucessos_por_s": 2.0166666666666666,
+        "falhas_pct": 66.48,
+        "p95_latencia_ok_ms": 444.69,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "1pod-a: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "1pod-a: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0
+      }
+    },
+    {
+      "verificacao": "1pod-a: endpoints prontos",
+      "passou": true,
+      "detalhes": 1
+    },
+    {
+      "verificacao": "1pod-a: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "1pod-a: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "1pod-a: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-n7rh9",
+        "carga-28fvq"
+      ]
+    },
+    {
+      "verificacao": "2pods-a: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 200,
+        "sucessos_por_s": 3.3333333333333335,
+        "falhas_pct": 44.59,
+        "p95_latencia_ok_ms": 429.16,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "2pods-a: recursos rotas-fc7784c5c-98g9n",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "2pods-a: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "2pods-a: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "a3404e5e-0db9-473c-a3be-eefc2b7f43c6": 0,
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0
+      }
+    },
+    {
+      "verificacao": "2pods-a: endpoints prontos",
+      "passou": true,
+      "detalhes": 2
+    },
+    {
+      "verificacao": "2pods-a: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "2pods-a: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "2pods-a: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-n7rh9",
+        "carga-ppqrz",
+        "rotas-fc7784c5c-98g9n"
+      ]
+    },
+    {
+      "verificacao": "2pods-b: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 212,
+        "sucessos_por_s": 3.533333333333333,
+        "falhas_pct": 41.27,
+        "p95_latencia_ok_ms": 381.81,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "2pods-b: recursos rotas-fc7784c5c-98g9n",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "2pods-b: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "2pods-b: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "a3404e5e-0db9-473c-a3be-eefc2b7f43c6": 0,
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0
+      }
+    },
+    {
+      "verificacao": "2pods-b: endpoints prontos",
+      "passou": true,
+      "detalhes": 2
+    },
+    {
+      "verificacao": "2pods-b: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "2pods-b: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "2pods-b: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-98g9n",
+        "rotas-fc7784c5c-n7rh9",
+        "carga-c6zq9"
+      ]
+    },
+    {
+      "verificacao": "3pods-b: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 256,
+        "sucessos_por_s": 4.266666666666667,
+        "falhas_pct": 29.08,
+        "p95_latencia_ok_ms": 380.58,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "3pods-b: recursos rotas-fc7784c5c-6zbrm",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-b: recursos rotas-fc7784c5c-98g9n",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-b: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-b: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "04a9c1e1-1399-43c1-8d3c-18ef144c0309": 0,
+        "a3404e5e-0db9-473c-a3be-eefc2b7f43c6": 0,
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0
+      }
+    },
+    {
+      "verificacao": "3pods-b: endpoints prontos",
+      "passou": true,
+      "detalhes": 3
+    },
+    {
+      "verificacao": "3pods-b: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "3pods-b: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "3pods-b: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-98g9n",
+        "rotas-fc7784c5c-n7rh9",
+        "carga-7s2qn",
+        "rotas-fc7784c5c-6zbrm"
+      ]
+    },
+    {
+      "verificacao": "1pod-b: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 141,
+        "sucessos_por_s": 2.35,
+        "falhas_pct": 60.94,
+        "p95_latencia_ok_ms": 385.78,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "1pod-b: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "1pod-b: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0
+      }
+    },
+    {
+      "verificacao": "1pod-b: endpoints prontos",
+      "passou": true,
+      "detalhes": 1
+    },
+    {
+      "verificacao": "1pod-b: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "1pod-b: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "1pod-b: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-n7rh9",
+        "carga-hwlfk"
+      ]
+    },
+    {
+      "verificacao": "1pod-c: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 134,
+        "sucessos_por_s": 2.2333333333333334,
+        "falhas_pct": 62.88,
+        "p95_latencia_ok_ms": 387.96,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "1pod-c: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "1pod-c: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0
+      }
+    },
+    {
+      "verificacao": "1pod-c: endpoints prontos",
+      "passou": true,
+      "detalhes": 1
+    },
+    {
+      "verificacao": "1pod-c: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "1pod-c: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "1pod-c: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-n7rh9",
+        "carga-vxg6r"
+      ]
+    },
+    {
+      "verificacao": "2pods-c: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 213,
+        "sucessos_por_s": 3.55,
+        "falhas_pct": 40.99,
+        "p95_latencia_ok_ms": 382.28,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "2pods-c: recursos rotas-fc7784c5c-g26nv",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "2pods-c: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "2pods-c: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "537e2886-be55-440c-a562-9bf739ed2e54": 0,
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0
+      }
+    },
+    {
+      "verificacao": "2pods-c: endpoints prontos",
+      "passou": true,
+      "detalhes": 2
+    },
+    {
+      "verificacao": "2pods-c: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "2pods-c: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "2pods-c: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-n7rh9",
+        "carga-nsxp8",
+        "rotas-fc7784c5c-g26nv"
+      ]
+    },
+    {
+      "verificacao": "3pods-c: tabela versus log",
+      "passou": true,
+      "detalhes": {
+        "rotas_ok": 244,
+        "sucessos_por_s": 4.066666666666666,
+        "falhas_pct": 32.4,
+        "p95_latencia_ok_ms": 378.61,
+        "dropped_iterations_medicao": 0
+      }
+    },
+    {
+      "verificacao": "3pods-c: recursos rotas-fc7784c5c-g26nv",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-c: recursos rotas-fc7784c5c-n7rh9",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-c: recursos rotas-fc7784c5c-vh829",
+      "passou": true,
+      "detalhes": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "500m",
+          "memory": "64Mi"
+        }
+      }
+    },
+    {
+      "verificacao": "3pods-c: identidade e reinícios estáveis",
+      "passou": true,
+      "detalhes": {
+        "537e2886-be55-440c-a562-9bf739ed2e54": 0,
+        "78d59bb8-b818-4430-8419-d5da839e6d37": 0,
+        "47e9e1ff-06b6-4b14-b16a-cc4fe2606108": 0
+      }
+    },
+    {
+      "verificacao": "3pods-c: endpoints prontos",
+      "passou": true,
+      "detalhes": 3
+    },
+    {
+      "verificacao": "3pods-c: execução completa do k6",
+      "passou": true,
+      "detalhes": 99
+    },
+    {
+      "verificacao": "3pods-c: condições fixas",
+      "passou": true,
+      "detalhes": {
+        "TAXA": "6",
+        "PARADAS": "9",
+        "DURACAO": "60"
+      }
+    },
+    {
+      "verificacao": "3pods-c: recursos amostrados",
+      "passou": true,
+      "detalhes": [
+        "rotas-fc7784c5c-g26nv",
+        "rotas-fc7784c5c-n7rh9",
+        "carga-cl9lw",
+        "rotas-fc7784c5c-vh829"
+      ]
+    },
+    {
+      "verificacao": "Imagem idêntica nas nove execuções",
+      "passou": true,
+      "detalhes": [
+        "sha256:fbce9bb38e4e6f286b977e7a032a7d9b3ac6566824d781b0fd6ee4c012c508ba"
+      ]
+    },
+    {
+      "verificacao": "Ordem A/B/C",
+      "passou": true,
+      "detalhes": [
+        "3pods-a",
+        "1pod-a",
+        "2pods-a",
+        "2pods-b",
+        "3pods-b",
+        "1pod-b",
+        "1pod-c",
+        "2pods-c",
+        "3pods-c"
+      ]
+    },
+    {
+      "verificacao": "Original app.py",
+      "passou": true,
+      "detalhes": "b20a4d9bf018252c1d63336262ad74c2d9a0bbcf198f51dfac7e1134fdeeef4e"
+    },
+    {
+      "verificacao": "Original carga.js",
+      "passou": true,
+      "detalhes": "c73b6bb67e7bcca0e53e2f223cd31529970e83e115510b21c23e42e3a8e391b2"
+    },
+    {
+      "verificacao": "Original Dockerfile",
+      "passou": true,
+      "detalhes": "ac77af28153dd252d25ea9e69828d66fa0898a23cd128b715bb8ce3e918019ec"
+    },
+    {
+      "verificacao": "Original .dockerignore",
+      "passou": true,
+      "detalhes": "1da3a93780f57bbc3f5178eb2866b97c9cd37a0a9ec2d03e17c17c4440617606"
+    },
+    {
+      "verificacao": "Original README.md",
+      "passou": true,
+      "detalhes": "5eea5573f362a30aac478244b0b4c47fff44191ddd56e6d90197f7af18a2eb88"
+    },
+    {
+      "verificacao": "Original resultados_modelo.csv",
+      "passou": true,
+      "detalhes": "43d8c6093e2ed43845f5de7e3eb3eaa16205f2b41ced91b07bc3fce5f7bf45c2"
+    },
+    {
+      "verificacao": "Pod excluído foi substituído",
+      "passou": true,
+      "detalhes": {
+        "antes": [
+          "f0fa1dfd-9def-418e-bab7-daf7faca5447"
+        ],
+        "depois": [
+          "b70d2d1a-134e-42b9-a5a5-791cb6585c30"
+        ]
+      }
+    },
+    {
+      "verificacao": "Rollback restaurou imagem",
+      "passou": true,
+      "detalhes": "rotas:1.0"
+    },
+    {
+      "verificacao": "Tabela mantém as colunas originais",
+      "passou": true,
+      "detalhes": [
+        "rotulo",
+        "rodada",
+        "replicas",
+        "taxa",
+        "rotas_ok",
+        "sucessos_por_s",
+        "falhas_pct",
+        "p95_latencia_ok_ms",
+        "dropped_iterations_medicao",
+        "status_job",
+        "cpu_observada_por_pod",
+        "distribuicao_aceitos_por_pod",
+        "observacoes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+> minikube status -p ops-lab
+ops-lab
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=3
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+Waiting for deployment "rotas" rollout to finish: 1 of 3 updated replicas are available...
+Waiting for deployment "rotas" rollout to finish: 2 of 3 updated replicas are available...
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\3pods-a/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 3pods-a --rodada A --replicas 3 --taxa 6
+Serie incompleta: 1/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=1
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\1pod-a/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 1pod-a --rodada A --replicas 1 --taxa 6
+Serie incompleta: 2/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=2
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+Waiting for deployment "rotas" rollout to finish: 1 of 2 updated replicas are available...
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\2pods-a/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 2pods-a --rodada A --replicas 2 --taxa 6
+Serie incompleta: 3/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=2
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\2pods-b/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 2pods-b --rodada B --replicas 2 --taxa 6
+Serie incompleta: 4/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=3
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+Waiting for deployment "rotas" rollout to finish: 2 of 3 updated replicas are available...
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\3pods-b/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 3pods-b --rodada B --replicas 3 --taxa 6
+Serie incompleta: 5/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=1
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\1pod-b/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 1pod-b --rodada B --replicas 1 --taxa 6
+Serie incompleta: 6/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=1
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\1pod-c/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 1pod-c --rodada C --replicas 1 --taxa 6
+Serie incompleta: 7/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=2
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+Waiting for deployment "rotas" rollout to finish: 1 of 2 updated replicas are available...
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\2pods-c/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 2pods-c --rodada C --replicas 2 --taxa 6
+Serie incompleta: 8/9. Medianas e graficos nao foram gerados.
+> kubectl --context=ops-lab --namespace=ops-lab delete job carga --wait=true
+job.batch "carga" deleted from ops-lab namespace
+> kubectl --context=ops-lab --namespace=ops-lab scale deployment/rotas --replicas=3
+deployment.apps/rotas scaled
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+Waiting for deployment "rotas" rollout to finish: 2 of 3 updated replicas are available...
+deployment "rotas" successfully rolled out
+> kubectl --context=ops-lab --namespace=ops-lab apply -f C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\resultados\evidencias\3pods-c/job.yaml
+job.batch/carga created
+> C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto/.ferramentas/Scripts/python.exe scripts/consolidar-resultados.py --importar 3pods-c --rodada C --replicas 3 --taxa 6
+Traceback (most recent call last):
+  File "C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\scripts\consolidar-resultados.py", line 93, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\Users\Cliente\Downloads\Atividade\RotaExpress_Kubernetes\projeto\scripts\consolidar-resultados.py", line 75, in main
+    if len({r['taxa'] for r in complete})!=1:raise ValueError('Taxas diferentes na serie.')
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Taxas diferentes na serie.

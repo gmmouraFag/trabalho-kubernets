@@ -1,0 +1,8 @@
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES      SELECTOR
+deployment.apps/rotas   1/1     1            1           0s    rotas        rotas:1.0   app=rotas
+
+NAME                               DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES      SELECTOR
+replicaset.apps/rotas-694c98487c   1         1         1       0s    rotas        rotas:1.0   app=rotas,pod-template-hash=694c98487c
+
+NAME                         READY   STATUS    RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+pod/rotas-694c98487c-q8vmd   1/1     Running   0          0s    10.244.0.4   ops-lab   <none>           <none>

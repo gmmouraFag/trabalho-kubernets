@@ -1,0 +1,121 @@
+LAST SEEN   TYPE      REASON                 OBJECT                        MESSAGE
+14m         Normal    Started                pod/rotas-694c98487c-q8vmd    Container started
+14m         Normal    SuccessfulCreate       replicaset/rotas-694c98487c   Created pod: rotas-694c98487c-q8vmd
+14m         Normal    Scheduled              pod/rotas-694c98487c-q8vmd    Successfully assigned ops-lab/rotas-694c98487c-q8vmd to ops-lab
+14m         Normal    Pulled                 pod/rotas-694c98487c-q8vmd    Container image "rotas:1.0" already present on machine and can be accessed by the pod
+14m         Normal    Created                pod/rotas-694c98487c-q8vmd    Container created
+14m         Normal    ScalingReplicaSet      deployment/rotas              Scaled up replica set rotas-694c98487c from 0 to 1
+14m         Normal    Started                pod/rotas-694c98487c-w29j7    Container started
+14m         Normal    Created                pod/rotas-694c98487c-w29j7    Container created
+14m         Normal    Pulled                 pod/rotas-694c98487c-w29j7    Container image "rotas:1.0" already present on machine and can be accessed by the pod
+14m         Normal    SuccessfulCreate       replicaset/rotas-694c98487c   Created pod: rotas-694c98487c-w29j7
+14m         Normal    Scheduled              pod/rotas-694c98487c-w29j7    Successfully assigned ops-lab/rotas-694c98487c-w29j7 to ops-lab
+14m         Normal    Killing                pod/rotas-694c98487c-q8vmd    Stopping container rotas
+14m         Normal    SuccessfulCreate       replicaset/rotas-fc7784c5c    Created pod: rotas-fc7784c5c-n7rh9
+14m         Normal    ScalingReplicaSet      deployment/rotas              Scaled up replica set rotas-fc7784c5c from 0 to 1
+14m         Normal    Scheduled              pod/rotas-fc7784c5c-n7rh9     Successfully assigned ops-lab/rotas-fc7784c5c-n7rh9 to ops-lab
+14m         Normal    Created                pod/rotas-fc7784c5c-n7rh9     Container created
+14m         Normal    Pulled                 pod/rotas-fc7784c5c-n7rh9     Container image "rotas:1.0" already present on machine and can be accessed by the pod
+14m         Warning   Unhealthy              pod/rotas-fc7784c5c-n7rh9     Readiness probe failed: Get "http://10.244.0.6:8000/readyz": dial tcp 10.244.0.6:8000: connect: connection refused
+14m         Normal    Started                pod/rotas-fc7784c5c-n7rh9     Container started
+13m         Normal    ScalingReplicaSet      deployment/rotas              Scaled down replica set rotas-694c98487c from 1 to 0
+13m         Normal    Killing                pod/rotas-694c98487c-w29j7    Stopping container rotas
+13m         Normal    SuccessfulDelete       replicaset/rotas-694c98487c   Deleted pod: rotas-694c98487c-w29j7
+12m         Normal    Scheduled              pod/teste-211032              Successfully assigned ops-lab/teste-211032 to ops-lab
+12m         Normal    Pulling                pod/teste-211032              Pulling image "busybox:1.36"
+12m         Normal    Started                pod/teste-211032              Container started
+12m         Normal    Created                pod/teste-211032              Container created
+12m         Normal    Pulled                 pod/teste-211032              Successfully pulled image "busybox:1.36" in 3.27s (3.27s including waiting). Image size: 2217006 bytes.
+12m         Normal    Scheduled              pod/rotas-9687f8dc8-bhhsh     Successfully assigned ops-lab/rotas-9687f8dc8-bhhsh to ops-lab
+12m         Normal    ScalingReplicaSet      deployment/rotas              Scaled up replica set rotas-9687f8dc8 from 0 to 1
+12m         Normal    SuccessfulCreate       replicaset/rotas-9687f8dc8    Created pod: rotas-9687f8dc8-bhhsh
+11m         Warning   Failed                 pod/rotas-9687f8dc8-bhhsh     Error: ErrImagePull
+11m         Warning   Failed                 pod/rotas-9687f8dc8-bhhsh     Failed to pull image "rotas:1.1": failed to pull and unpack image "docker.io/library/rotas:1.1": failed to resolve reference "docker.io/library/rotas:1.1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+11m         Normal    Pulling                pod/rotas-9687f8dc8-bhhsh     Pulling image "rotas:1.1"
+11m         Warning   Failed                 pod/rotas-9687f8dc8-bhhsh     Error: ImagePullBackOff
+11m         Normal    BackOff                pod/rotas-9687f8dc8-bhhsh     Back-off pulling image "rotas:1.1"
+11m         Normal    Scheduled              pod/teste-rollback            Successfully assigned ops-lab/teste-rollback to ops-lab
+11m         Normal    Started                pod/teste-rollback            Container started
+11m         Normal    Created                pod/teste-rollback            Container created
+11m         Normal    Pulled                 pod/teste-rollback            Container image "busybox:1.36" already present on machine and can be accessed by the pod
+11m         Normal    ScalingReplicaSet      deployment/rotas              Scaled down replica set rotas-9687f8dc8 from 1 to 0
+11m         Normal    SuccessfulDelete       replicaset/rotas-9687f8dc8    Deleted pod: rotas-9687f8dc8-bhhsh
+10m         Normal    Scheduled              pod/carga-rphwn               Successfully assigned ops-lab/carga-rphwn to ops-lab
+10m         Normal    Pulling                pod/carga-rphwn               Pulling image "grafana/k6:1.0.0"
+10m         Normal    SuccessfulCreate       job/carga                     Created pod: carga-rphwn
+10m         Normal    Started                pod/carga-rphwn               Container started
+10m         Normal    Pulled                 pod/carga-rphwn               Successfully pulled image "grafana/k6:1.0.0" in 8.35s (8.35s including waiting). Image size: 36592481 bytes.
+10m         Normal    Created                pod/carga-rphwn               Container created
+8m31s       Normal    Scheduled              pod/rotas-fc7784c5c-qw2r4     Successfully assigned ops-lab/rotas-fc7784c5c-qw2r4 to ops-lab
+8m31s       Normal    Scheduled              pod/rotas-fc7784c5c-sdlbb     Successfully assigned ops-lab/rotas-fc7784c5c-sdlbb to ops-lab
+8m31s       Normal    SuccessfulCreate       replicaset/rotas-fc7784c5c    Created pod: rotas-fc7784c5c-sdlbb
+8m31s       Normal    SuccessfulCreate       replicaset/rotas-fc7784c5c    Created pod: rotas-fc7784c5c-qw2r4
+8m31s       Normal    ScalingReplicaSet      deployment/rotas              Scaled up replica set rotas-fc7784c5c from 1 to 3
+8m30s       Normal    Started                pod/rotas-fc7784c5c-sdlbb     Container started
+8m30s       Normal    Pulled                 pod/rotas-fc7784c5c-sdlbb     Container image "rotas:1.0" already present on machine and can be accessed by the pod
+8m30s       Normal    Pulled                 pod/rotas-fc7784c5c-qw2r4     Container image "rotas:1.0" already present on machine and can be accessed by the pod
+8m30s       Warning   Unhealthy              pod/rotas-fc7784c5c-sdlbb     Readiness probe failed: Get "http://10.244.0.11:8000/readyz": dial tcp 10.244.0.11:8000: connect: connection refused
+8m30s       Normal    Created                pod/rotas-fc7784c5c-qw2r4     Container created
+8m30s       Normal    Started                pod/rotas-fc7784c5c-qw2r4     Container started
+8m30s       Warning   Unhealthy              pod/rotas-fc7784c5c-qw2r4     Readiness probe failed: Get "http://10.244.0.12:8000/readyz": dial tcp 10.244.0.12:8000: connect: connection refused
+8m30s       Normal    Created                pod/rotas-fc7784c5c-sdlbb     Container created
+8m29s       Normal    SuccessfulCreate       job/carga                     Created pod: carga-rcngm
+8m29s       Normal    Started                pod/carga-rcngm               Container started
+8m29s       Normal    Created                pod/carga-rcngm               Container created
+8m29s       Normal    Pulled                 pod/carga-rcngm               Container image "grafana/k6:1.0.0" already present on machine and can be accessed by the pod
+8m29s       Normal    Scheduled              pod/carga-rcngm               Successfully assigned ops-lab/carga-rcngm to ops-lab
+7m5s        Normal    SuccessfulDelete       replicaset/rotas-fc7784c5c    Deleted pod: rotas-fc7784c5c-sdlbb
+7m5s        Normal    Killing                pod/rotas-fc7784c5c-qw2r4     Stopping container rotas
+7m5s        Normal    Killing                pod/rotas-fc7784c5c-sdlbb     Stopping container rotas
+7m5s        Warning   BackoffLimitExceeded   job/carga                     Job has reached the specified backoff limit
+7m5s        Normal    SuccessfulDelete       replicaset/rotas-fc7784c5c    Deleted pod: rotas-fc7784c5c-qw2r4
+7m4s        Normal    Scheduled              pod/carga-28fvq               Successfully assigned ops-lab/carga-28fvq to ops-lab
+7m4s        Normal    SuccessfulCreate       job/carga                     Created pod: carga-28fvq
+7m4s        Normal    Started                pod/carga-28fvq               Container started
+7m4s        Normal    Created                pod/carga-28fvq               Container created
+7m4s        Normal    Pulled                 pod/carga-28fvq               Container image "grafana/k6:1.0.0" already present on machine and can be accessed by the pod
+5m41s       Warning   BackoffLimitExceeded   job/carga                     Job has reached the specified backoff limit
+5m40s       Normal    Pulled                 pod/rotas-fc7784c5c-98g9n     Container image "rotas:1.0" already present on machine and can be accessed by the pod
+5m40s       Normal    ScalingReplicaSet      deployment/rotas              Scaled up replica set rotas-fc7784c5c from 1 to 2
+5m40s       Warning   Unhealthy              pod/rotas-fc7784c5c-98g9n     Readiness probe failed: Get "http://10.244.0.15:8000/readyz": dial tcp 10.244.0.15:8000: connect: connection refused
+5m40s       Normal    Started                pod/rotas-fc7784c5c-98g9n     Container started
+5m40s       Normal    Created                pod/rotas-fc7784c5c-98g9n     Container created
+5m40s       Normal    SuccessfulCreate       replicaset/rotas-fc7784c5c    Created pod: rotas-fc7784c5c-98g9n
+5m40s       Normal    Scheduled              pod/rotas-fc7784c5c-98g9n     Successfully assigned ops-lab/rotas-fc7784c5c-98g9n to ops-lab
+5m39s       Normal    SuccessfulCreate       job/carga                     Created pod: carga-ppqrz
+5m39s       Normal    Scheduled              pod/carga-ppqrz               Successfully assigned ops-lab/carga-ppqrz to ops-lab
+5m39s       Normal    Pulled                 pod/carga-ppqrz               Container image "grafana/k6:1.0.0" already present on machine and can be accessed by the pod
+5m39s       Normal    Created                pod/carga-ppqrz               Container created
+5m38s       Normal    Started                pod/carga-ppqrz               Container started
+4m16s       Warning   BackoffLimitExceeded   job/carga                     Job has reached the specified backoff limit
+4m14s       Normal    Created                pod/carga-c6zq9               Container created
+4m14s       Normal    SuccessfulCreate       job/carga                     Created pod: carga-c6zq9
+4m14s       Normal    Scheduled              pod/carga-c6zq9               Successfully assigned ops-lab/carga-c6zq9 to ops-lab
+4m14s       Normal    Pulled                 pod/carga-c6zq9               Container image "grafana/k6:1.0.0" already present on machine and can be accessed by the pod
+4m14s       Normal    Started                pod/carga-c6zq9               Container started
+2m51s       Warning   BackoffLimitExceeded   job/carga                     Job has reached the specified backoff limit
+2m50s       Normal    ScalingReplicaSet      deployment/rotas              Scaled up replica set rotas-fc7784c5c from 2 to 3
+2m50s       Warning   Unhealthy              pod/rotas-fc7784c5c-6zbrm     Readiness probe failed: Get "http://10.244.0.18:8000/readyz": dial tcp 10.244.0.18:8000: connect: connection refused
+2m50s       Normal    Scheduled              pod/rotas-fc7784c5c-6zbrm     Successfully assigned ops-lab/rotas-fc7784c5c-6zbrm to ops-lab
+2m50s       Normal    Created                pod/rotas-fc7784c5c-6zbrm     Container created
+2m50s       Normal    SuccessfulCreate       replicaset/rotas-fc7784c5c    Created pod: rotas-fc7784c5c-6zbrm
+2m50s       Normal    Started                pod/rotas-fc7784c5c-6zbrm     Container started
+2m50s       Normal    Pulled                 pod/rotas-fc7784c5c-6zbrm     Container image "rotas:1.0" already present on machine and can be accessed by the pod
+2m49s       Normal    SuccessfulCreate       job/carga                     Created pod: carga-7s2qn
+2m49s       Normal    Scheduled              pod/carga-7s2qn               Successfully assigned ops-lab/carga-7s2qn to ops-lab
+2m48s       Normal    Started                pod/carga-7s2qn               Container started
+2m48s       Normal    Created                pod/carga-7s2qn               Container created
+2m48s       Normal    Pulled                 pod/carga-7s2qn               Container image "grafana/k6:1.0.0" already present on machine and can be accessed by the pod
+85s         Warning   BackoffLimitExceeded   job/carga                     Job has reached the specified backoff limit
+84s         Normal    SuccessfulDelete       replicaset/rotas-fc7784c5c    Deleted pod: rotas-fc7784c5c-6zbrm
+84s         Normal    Killing                pod/rotas-fc7784c5c-98g9n     Stopping container rotas
+84s         Normal    ScalingReplicaSet      deployment/rotas              Scaled down replica set rotas-fc7784c5c from 3 to 1
+84s         Normal    Scheduled              pod/carga-hwlfk               Successfully assigned ops-lab/carga-hwlfk to ops-lab
+84s         Normal    Pulled                 pod/carga-hwlfk               Container image "grafana/k6:1.0.0" already present on machine and can be accessed by the pod
+84s         Normal    Created                pod/carga-hwlfk               Container created
+84s         Normal    Killing                pod/rotas-fc7784c5c-6zbrm     Stopping container rotas
+84s         Normal    SuccessfulDelete       replicaset/rotas-fc7784c5c    Deleted pod: rotas-fc7784c5c-98g9n
+84s         Normal    SuccessfulCreate       job/carga                     Created pod: carga-hwlfk
+83s         Normal    Started                pod/carga-hwlfk               Container started
+53s         Warning   Unhealthy              pod/rotas-fc7784c5c-98g9n     Readiness probe failed: Get "http://10.244.0.15:8000/readyz": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+1s          Warning   BackoffLimitExceeded   job/carga                     Job has reached the specified backoff limit

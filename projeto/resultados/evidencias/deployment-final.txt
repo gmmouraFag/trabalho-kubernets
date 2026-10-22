@@ -1,0 +1,43 @@
+Name:                   rotas
+Namespace:              ops-lab
+CreationTimestamp:      Wed, 21 Oct 2026 21:08:08 -0300
+Labels:                 app=rotas
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=rotas
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=rotas
+  Containers:
+   rotas:
+    Image:      rotas:1.0
+    Port:       8000/TCP
+    Host Port:  0/TCP
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:         500m
+      memory:      64Mi
+    Liveness:      http-get http://:8000/healthz delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:     http-get http://:8000/readyz delay=0s timeout=1s period=5s #success=1 #failure=3
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  rotas-694c98487c (0/0 replicas created)
+NewReplicaSet:   rotas-fc7784c5c (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  38s   deployment-controller  Scaled up replica set rotas-694c98487c from 0 to 1
+  Normal  ScalingReplicaSet  6s    deployment-controller  Scaled up replica set rotas-fc7784c5c from 0 to 1
+  Normal  ScalingReplicaSet  0s    deployment-controller  Scaled down replica set rotas-694c98487c from 1 to 0

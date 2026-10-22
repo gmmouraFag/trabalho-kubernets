@@ -1,0 +1,2 @@
+[pod/rotas-fc7784c5c-n7rh9/rotas] RotaExpress em http://localhost:8000
+[pod/rotas-fc7784c5c-n7rh9/rotas] aceito calculo_ms=414.5 total_aceitos=1 total_recusados=0

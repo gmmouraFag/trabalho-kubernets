@@ -1,0 +1,80 @@
+**********************
+PowerShell transcript start
+Start time: 20261021210734
+Username: DESKTOP-H3I4SRO\Gustavo
+RunAs User: DESKTOP-H3I4SRO\Gustavo
+Configuration Name: 
+Machine: DESKTOP-H3I4SRO (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Users\Cliente\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+. '.\scripts\publicar-aplicacao.ps1'
+Process ID: 3760
+PSVersion: 7.6.5
+PSEdition: Core
+GitCommitId: 7.6.5
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is resultados/logs/publicacao-20261021-210734.txt
+> docker build -t rotas:1.0 .
+
+> docker image ls rotas
+
+> docker run -d --rm -p 127.0.0.1:8000:8000 --name rotas-teste rotas:1.0
+
+<!doctype html><html lang="pt-BR"><meta charset="utf-8">
+<title>RotaExpress • Operações</title><style>
+body{font:18px system-ui;max-width:850px;margin:40px auto;padding:20px;color:#18382a;background:#f5f8f6}
+h1{color:#004823}button,select{font:inherit;padding:10px;border-radius:8px;border:1px solid #99b5a5}
+button{background:#004823;color:white;cursor:pointer}section{background:white;border-radius:14px;padding:25px}
+svg{width:100%;max-height:360px}small{display:block;color:#526158}#info{min-height:55px}</style>
+<h1>RotaExpress</h1><p>Uma pequena transportadora precisa visitar pontos de entrega e voltar ao depósito, percorrendo a menor distância possível.</p>
+<section><label>Entregas: <select id="n"><option>7</option><option>8</option><option selected>9</option></select></label>
+<button id="go">Calcular rota</button><p id="info">O ponto 0 é o depósito. Clique para enviar uma solicitação à aplicação.</p>
+<svg id="mapa" viewBox="0 0 110 110" aria-label="Rota calculada"></svg></section>
+<p><small>Protótipo didático: pontos fictícios, distâncias em linha reta, sem trânsito ou ruas. Cada pedido refaz o cálculo, sem cache.</small></p>
+<script>
+document.querySelector('#go').onclick=async()=>{
+ const el=document.querySelector('#info'); el.textContent='Calculando…';
+ try {const r=await fetch('/api/rota?paradas='+document.querySelector('#n').value);
+ const d=await r.json(); if(!r.ok)throw Error(d.erro);
+ el.textContent=`Distância: ${d.distancia} unidades | Cálculo: ${d.calculo_ms} ms | Atendido por: ${d.pod}`;
+ let s='<polyline fill="none" stroke="#326ce5" stroke-width="0.8" points="'+d.ordem.map(i=>d.pontos[i].join(',')).join(' ')+'"/>';
+ d.pontos.forEach((p,i)=>{s+=`<circle cx="${p[0]}" cy="${p[1]}" r="2" fill="${i===0?'#e31e24':'#004823'}"/><text x="${p[0]+3}" y="${p[1]}" font-size="4">${i}</text>`});
+ document.querySelector('#mapa').innerHTML=s;
+ }catch(e){el.textContent='Não foi possível atender: '+e.message;}
+};</script></html>
+{"status": "ok", "pod": "5c216de76618"}
+{"status": "ok", "pod": "5c216de76618"}
+{"pontos": [[10, 10], [80, 20], [25, 70], [70, 85], [45, 25], [15, 45], [90, 55], [50, 95], [65, 45], [35, 55]], "ordem": [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0], "distancia": 299.03, "paradas": 9, "pod": "5c216de76618", "calculo_ms": 180.7}
+> docker logs rotas-teste
+
+> docker stop rotas-teste
+
+> minikube image load rotas:1.0 -p ops-lab
+
+> minikube image ls -p ops-lab
+
+> kubectl --context=ops-lab --namespace=ops-lab apply -f k8s/versoes/deployment-inicial.yaml
+
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+
+> kubectl --context=ops-lab --namespace=ops-lab delete pod -l app=rotas
+
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+
+> kubectl --context=ops-lab --namespace=ops-lab apply -f k8s/deployment.yaml
+
+> kubectl --context=ops-lab --namespace=ops-lab rollout status deployment/rotas --timeout=180s
+
+> kubectl --context=ops-lab --namespace=ops-lab rollout history deployment/rotas
+
+> kubectl --context=ops-lab --namespace=ops-lab apply -f k8s/service.yaml
+
+**********************
+PowerShell transcript end
+End time: 20261021210846
+**********************

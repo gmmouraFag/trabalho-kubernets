@@ -1,0 +1,22 @@
+[
+  {
+    "URL": "https://download.docker.com",
+    "HTTP": 200,
+    "Erro": null
+  },
+  {
+    "URL": "https://dl.k8s.io/release/stable.txt",
+    "HTTP": 200,
+    "Erro": null
+  },
+  {
+    "URL": "https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe",
+    "HTTP": 200,
+    "Erro": null
+  },
+  {
+    "URL": "https://github.com/microsoft/WSL",
+    "HTTP": 200,
+    "Erro": null
+  }
+]

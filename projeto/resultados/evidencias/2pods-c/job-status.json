@@ -1,0 +1,116 @@
+{
+    "apiVersion": "batch/v1",
+    "kind": "Job",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"batch/v1\",\"kind\":\"Job\",\"metadata\":{\"annotations\":{},\"name\":\"carga\",\"namespace\":\"ops-lab\"},\"spec\":{\"activeDeadlineSeconds\":240,\"backoffLimit\":0,\"template\":{\"metadata\":{\"labels\":{\"app\":\"gerador-carga\"}},\"spec\":{\"containers\":[{\"command\":[\"k6\",\"run\",\"/scripts/carga.js\"],\"env\":[{\"name\":\"TAXA\",\"value\":\"6\"},{\"name\":\"PARADAS\",\"value\":\"9\"},{\"name\":\"DURACAO\",\"value\":\"60\"}],\"image\":\"grafana/k6:1.0.0\",\"name\":\"k6\",\"resources\":{\"limits\":{\"cpu\":\"500m\",\"memory\":\"256Mi\"},\"requests\":{\"cpu\":\"250m\",\"memory\":\"128Mi\"}},\"volumeMounts\":[{\"mountPath\":\"/scripts\",\"name\":\"script\",\"readOnly\":true}]}],\"restartPolicy\":\"Never\",\"volumes\":[{\"configMap\":{\"name\":\"carga-script\"},\"name\":\"script\"}]}}}}\n"
+        },
+        "creationTimestamp": "2026-10-22T00:24:08Z",
+        "generation": 1,
+        "labels": {
+            "app": "gerador-carga",
+            "batch.kubernetes.io/controller-uid": "8bd1006a-7f9d-45f5-9c4f-c0db166ba94f",
+            "batch.kubernetes.io/job-name": "carga",
+            "controller-uid": "8bd1006a-7f9d-45f5-9c4f-c0db166ba94f",
+            "job-name": "carga"
+        },
+        "name": "carga",
+        "namespace": "ops-lab",
+        "resourceVersion": "2061",
+        "uid": "8bd1006a-7f9d-45f5-9c4f-c0db166ba94f"
+    },
+    "spec": {
+        "activeDeadlineSeconds": 240,
+        "backoffLimit": 0,
+        "completionMode": "NonIndexed",
+        "completions": 1,
+        "manualSelector": false,
+        "parallelism": 1,
+        "podReplacementPolicy": "TerminatingOrFailed",
+        "selector": {
+            "matchLabels": {
+                "batch.kubernetes.io/controller-uid": "8bd1006a-7f9d-45f5-9c4f-c0db166ba94f"
+            }
+        },
+        "suspend": false,
+        "template": {
+            "metadata": {
+                "labels": {
+                    "app": "gerador-carga",
+                    "batch.kubernetes.io/controller-uid": "8bd1006a-7f9d-45f5-9c4f-c0db166ba94f",
+                    "batch.kubernetes.io/job-name": "carga",
+                    "controller-uid": "8bd1006a-7f9d-45f5-9c4f-c0db166ba94f",
+                    "job-name": "carga"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "command": [
+                            "k6",
+                            "run",
+                            "/scripts/carga.js"
+                        ],
+                        "env": [
+                            {
+                                "name": "TAXA",
+                                "value": "6"
+                            },
+                            {
+                                "name": "PARADAS",
+                                "value": "9"
+                            },
+                            {
+                                "name": "DURACAO",
+                                "value": "60"
+                            }
+                        ],
+                        "image": "grafana/k6:1.0.0",
+                        "imagePullPolicy": "IfNotPresent",
+                        "name": "k6",
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "256Mi"
+                            },
+                            "requests": {
+                                "cpu": "250m",
+                                "memory": "128Mi"
+                            }
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/scripts",
+                                "name": "script",
+                                "readOnly": true
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "restartPolicy": "Never",
+                "schedulerName": "default-scheduler",
+                "securityContext": {},
+                "terminationGracePeriodSeconds": 30,
+                "volumes": [
+                    {
+                        "configMap": {
+                            "defaultMode": 420,
+                            "name": "carga-script"
+                        },
+                        "name": "script"
+                    }
+                ]
+            }
+        }
+    },
+    "status": {
+        "active": 1,
+        "ready": 0,
+        "startTime": "2026-10-22T00:24:08Z",
+        "terminating": 0,
+        "uncountedTerminatedPods": {}
+    }
+}

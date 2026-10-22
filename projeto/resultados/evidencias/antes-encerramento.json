@@ -1,0 +1,483 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "6",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"rotas\"},\"name\":\"rotas\",\"namespace\":\"ops-lab\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"rotas\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"rotas\"}},\"spec\":{\"containers\":[{\"image\":\"rotas:1.0\",\"imagePullPolicy\":\"IfNotPresent\",\"livenessProbe\":{\"httpGet\":{\"path\":\"/healthz\",\"port\":8000},\"initialDelaySeconds\":10,\"periodSeconds\":10},\"name\":\"rotas\",\"ports\":[{\"containerPort\":8000}],\"readinessProbe\":{\"httpGet\":{\"path\":\"/readyz\",\"port\":8000},\"periodSeconds\":5},\"resources\":{\"limits\":{\"cpu\":\"500m\",\"memory\":\"128Mi\"},\"requests\":{\"cpu\":\"500m\",\"memory\":\"64Mi\"}},\"securityContext\":{\"allowPrivilegeEscalation\":false,\"readOnlyRootFilesystem\":true,\"runAsNonRoot\":true}}]}}}}\n"
+                },
+                "creationTimestamp": "2026-10-22T00:08:08Z",
+                "generation": 15,
+                "labels": {
+                    "app": "rotas"
+                },
+                "name": "rotas",
+                "namespace": "ops-lab",
+                "resourceVersion": "2514",
+                "uid": "3171b50b-324b-4531-bcad-b57f55a52c19"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app": "rotas"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": "25%",
+                        "maxUnavailable": "25%"
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "rotas"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "rotas:1.0",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 8000,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 10,
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "rotas",
+                                "ports": [
+                                    {
+                                        "containerPort": 8000,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/readyz",
+                                        "port": 8000,
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "500m",
+                                        "memory": "128Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "500m",
+                                        "memory": "64Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "readOnlyRootFilesystem": true,
+                                    "runAsNonRoot": true
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-10-22T00:27:49Z",
+                        "lastUpdateTime": "2026-10-22T00:27:49Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-10-22T00:08:08Z",
+                        "lastUpdateTime": "2026-10-22T00:29:06Z",
+                        "message": "ReplicaSet \"rotas-fc7784c5c\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 15,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-22T00:08:40Z",
+                "generateName": "rotas-fc7784c5c-",
+                "generation": 1,
+                "labels": {
+                    "app": "rotas",
+                    "pod-template-hash": "fc7784c5c"
+                },
+                "name": "rotas-fc7784c5c-n7rh9",
+                "namespace": "ops-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "rotas-fc7784c5c",
+                        "uid": "37badeb8-f17b-4a21-b615-d3832a26fe0d"
+                    }
+                ],
+                "resourceVersion": "646",
+                "uid": "78d59bb8-b818-4430-8419-d5da839e6d37"
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "image": "rotas:1.0",
+                        "imagePullPolicy": "IfNotPresent",
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/healthz",
+                                "port": 8000,
+                                "scheme": "HTTP"
+                            },
+                            "initialDelaySeconds": 10,
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "name": "rotas",
+                        "ports": [
+                            {
+                                "containerPort": 8000,
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/readyz",
+                                "port": 8000,
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 5,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "128Mi"
+                            },
+                            "requests": {
+                                "cpu": "500m",
+                                "memory": "64Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "readOnlyRootFilesystem": true,
+                            "runAsNonRoot": true
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-rmjwn",
+                                "readOnly": true
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "ops-lab",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {},
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "terminationGracePeriodSeconds": 30,
+                "tolerations": [
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "name": "kube-api-access-rmjwn",
+                        "projected": {
+                            "defaultMode": 420,
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ],
+                                        "name": "kube-root-ca.crt"
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                },
+                                                "path": "namespace"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "allocatedResources": {
+                    "cpu": "500m",
+                    "memory": "64Mi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-22T00:08:41Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-22T00:08:40Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-22T00:08:46Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-22T00:08:46Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-22T00:08:40Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "500m",
+                            "memory": "64Mi"
+                        },
+                        "containerID": "containerd://aba40f15f48cbd922b1d4214abb23f894df07840f43838f67c9d861373cac99b",
+                        "image": "docker.io/library/rotas:1.0",
+                        "imageID": "sha256:fbce9bb38e4e6f286b977e7a032a7d9b3ac6566824d781b0fd6ee4c012c508ba",
+                        "lastState": {},
+                        "name": "rotas",
+                        "ready": true,
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "128Mi"
+                            },
+                            "requests": {
+                                "cpu": "500m",
+                                "memory": "64Mi"
+                            }
+                        },
+                        "restartCount": 0,
+                        "started": true,
+                        "state": {
+                            "running": {
+                                "startedAt": "2026-10-22T00:08:41Z"
+                            }
+                        },
+                        "user": {
+                            "linux": {
+                                "gid": 0,
+                                "supplementalGroups": [
+                                    0
+                                ],
+                                "uid": 10001
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-rmjwn",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "hostIPs": [
+                    {
+                        "ip": "192.168.49.2"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.244.0.6",
+                "podIPs": [
+                    {
+                        "ip": "10.244.0.6"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "resources": {
+                    "limits": {
+                        "cpu": "500m",
+                        "memory": "128Mi"
+                    },
+                    "requests": {
+                        "cpu": "489m",
+                        "memory": "64Mi"
+                    }
+                },
+                "startTime": "2026-10-22T00:08:40Z"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"rotas\",\"namespace\":\"ops-lab\"},\"spec\":{\"ports\":[{\"port\":8000,\"targetPort\":8000}],\"selector\":{\"app\":\"rotas\"},\"type\":\"ClusterIP\"}}\n"
+                },
+                "creationTimestamp": "2026-10-22T00:08:46Z",
+                "name": "rotas",
+                "namespace": "ops-lab",
+                "resourceVersion": "661",
+                "uid": "8645967d-8950-4417-b314-91a4be1d5937"
+            },
+            "spec": {
+                "clusterIP": "10.106.190.158",
+                "clusterIPs": [
+                    "10.106.190.158"
+                ],
+                "internalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "ports": [
+                    {
+                        "port": 8000,
+                        "protocol": "TCP",
+                        "targetPort": 8000
+                    }
+                ],
+                "selector": {
+                    "app": "rotas"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "data": {
+                "carga.js": "// Teste de carga do RotaExpress com Grafana k6.\n// Taxa, tamanho da rota e duração chegam por variáveis de ambiente,\n// definidas no manifesto do Job (k8s/job-carga.yaml).\nimport http from 'k6/http';\nimport { Counter, Rate, Trend } from 'k6/metrics';\n\nconst URL = __ENV.URL || 'http://rotas:8000';\nconst TAXA = Number(__ENV.TAXA || 6);           // pedidos iniciados por segundo\nconst PARADAS = __ENV.PARADAS || '9';           // entregas por rota\nconst DURACAO = Number(__ENV.DURACAO || 60);    // segundos medidos\n\nconst rotasOk = new Counter('rotas_ok');        // rotas válidas na medição\nconst falhas = new Rate('falhas');              // fração de tentativas sem rota válida\nconst latenciaOk = new Trend('latencia_ok', true); // tempo HTTP só dos sucessos\n\nconst cenario = {\n  executor: 'constant-arrival-rate',\n  rate: TAXA,\n  timeUnit: '1s',\n  preAllocatedVUs: 40,\n  maxVUs: 40,\n  gracefulStop: '10s',\n};\n\nexport const options = {\n  noConnectionReuse: true,  // cada pedido abre conexão nova; o Service escolhe o Pod a cada vez\n  summaryTrendStats: ['avg', 'med', 'p(95)', 'max'],\n  scenarios: {\n    // 10 s para aquecer; não entra nas métricas próprias.\n    aquecimento: { ...cenario, exec: 'aquecer', duration: '10s' },\n    // Começa aos 20 s: 10 s de aquecimento + 10 s para pedidos pendentes terminarem.\n    medicao: { ...cenario, exec: 'medir', startTime: '20s', duration: DURACAO + 's' },\n  },\n  thresholds: {\n    falhas: ['rate\u003c0.01'],\n    latencia_ok: ['p(95)\u003c800'],\n    'dropped_iterations{scenario:medicao}': ['count==0'],\n  },\n};\n\nfunction pedirRota() {\n  return http.get(`${URL}/api/rota?paradas=${PARADAS}`, { timeout: '5s' });\n}\n\nexport function aquecer() {\n  pedirRota();\n}\n\nexport function medir() {\n  const r = pedirRota();\n  let corpo = null;\n  try { corpo = r.json(); } catch (_) { /* resposta sem JSON conta como falha */ }\n  const ok = r.status === 200 \u0026\u0026 corpo !== null \u0026\u0026 Array.isArray(corpo.ordem);\n  falhas.add(!ok);\n  if (ok) {\n    rotasOk.add(1);\n    latenciaOk.add(r.timings.duration); // 503 rápido não pode \"melhorar\" o p95\n  }\n}\n"
+            },
+            "kind": "ConfigMap",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"data\":{\"carga.js\":\"// Teste de carga do RotaExpress com Grafana k6.\\n// Taxa, tamanho da rota e duração chegam por variáveis de ambiente,\\n// definidas no manifesto do Job (k8s/job-carga.yaml).\\nimport http from 'k6/http';\\nimport { Counter, Rate, Trend } from 'k6/metrics';\\n\\nconst URL = __ENV.URL || 'http://rotas:8000';\\nconst TAXA = Number(__ENV.TAXA || 6);           // pedidos iniciados por segundo\\nconst PARADAS = __ENV.PARADAS || '9';           // entregas por rota\\nconst DURACAO = Number(__ENV.DURACAO || 60);    // segundos medidos\\n\\nconst rotasOk = new Counter('rotas_ok');        // rotas válidas na medição\\nconst falhas = new Rate('falhas');              // fração de tentativas sem rota válida\\nconst latenciaOk = new Trend('latencia_ok', true); // tempo HTTP só dos sucessos\\n\\nconst cenario = {\\n  executor: 'constant-arrival-rate',\\n  rate: TAXA,\\n  timeUnit: '1s',\\n  preAllocatedVUs: 40,\\n  maxVUs: 40,\\n  gracefulStop: '10s',\\n};\\n\\nexport const options = {\\n  noConnectionReuse: true,  // cada pedido abre conexão nova; o Service escolhe o Pod a cada vez\\n  summaryTrendStats: ['avg', 'med', 'p(95)', 'max'],\\n  scenarios: {\\n    // 10 s para aquecer; não entra nas métricas próprias.\\n    aquecimento: { ...cenario, exec: 'aquecer', duration: '10s' },\\n    // Começa aos 20 s: 10 s de aquecimento + 10 s para pedidos pendentes terminarem.\\n    medicao: { ...cenario, exec: 'medir', startTime: '20s', duration: DURACAO + 's' },\\n  },\\n  thresholds: {\\n    falhas: ['rate\\u003c0.01'],\\n    latencia_ok: ['p(95)\\u003c800'],\\n    'dropped_iterations{scenario:medicao}': ['count==0'],\\n  },\\n};\\n\\nfunction pedirRota() {\\n  return http.get(`${URL}/api/rota?paradas=${PARADAS}`, { timeout: '5s' });\\n}\\n\\nexport function aquecer() {\\n  pedirRota();\\n}\\n\\nexport function medir() {\\n  const r = pedirRota();\\n  let corpo = null;\\n  try { corpo = r.json(); } catch (_) { /* resposta sem JSON conta como falha */ }\\n  const ok = r.status === 200 \\u0026\\u0026 corpo !== null \\u0026\\u0026 Array.isArray(corpo.ordem);\\n  falhas.add(!ok);\\n  if (ok) {\\n    rotasOk.add(1);\\n    latenciaOk.add(r.timings.duration); // 503 rápido não pode \\\"melhorar\\\" o p95\\n  }\\n}\\n\"},\"kind\":\"ConfigMap\",\"metadata\":{\"annotations\":{},\"name\":\"carga-script\",\"namespace\":\"ops-lab\"}}\n"
+                },
+                "creationTimestamp": "2026-10-22T00:08:46Z",
+                "name": "carga-script",
+                "namespace": "ops-lab",
+                "resourceVersion": "664",
+                "uid": "2c47c5e4-4851-46b5-ab48-db3fb23eeb0c"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "data": {
+                "ca.crt": "-----BEGIN CERTIFICATE-----\nMIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p\na3ViZUNBMB4XDTI2MTAyMTAwMDY1MFoXDTM2MTAxOTAwMDY1MFowFTETMBEGA1UE\nAxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM8s\nzL7OG4aiT6g6ru2rnZHBpYErBlst93ZJj4DyyGDF3wuV81HIy7fUrq1TW9u8t3lE\nipK/fu7Agxb6m+o0QPBXDDikE480ozS/sTRsETNCHzNsIfyu5GFX+NheeNeVd1sd\nF1n7xsOxB1e5jTWgqRA0t7HT4b+roGdljbUebCTcnFVHlhj0d7+NjDrp2XRsg9sQ\n2UabV3fB5G9naub0XyPXIJtU1Z2acNvep+/Qmfb+IQj0tAb7PMwH7/Kn2eW9aJ0I\nH4FDKphAyXxTna2mWd99BmaXvj2HI6y21WUO0js5N22o8/IVXkLf1xyro3cu9wvN\nZcRG69O70M7Gyn4FazkCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW\nMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW\nBBSx5/QhqCITpaRzlwiGzSgsOH33WjANBgkqhkiG9w0BAQsFAAOCAQEAPsaiVm4K\nSEf9x9TCEfY+rW+xy0pZODRn39ormmo2R2cWqCQ7ZrRTX2iZ7uRftE1llRBpJVEr\nXMyhT4xV1UmaOAF+pnin0rgJooxEla3NpkIXSU4N6lPtprW0HeHIqH2S1rW8V2U/\nKxz9qyFoeelgkpuwMPvRU0nBZTwU4H0cTGj3essH4nAqgrmx2F7uy9UpT439lihc\nIFO06jMJoMMwtIW5HatLbWVEZZPtJSEjFxcyCpD9Qih9hX5Hi8zWBxseZTdCES9x\n1/Gd4TrGwiJbQj300zhrNLo0SQSK1/j7k42lpTi95Ml88Mb34JJws8xoM6Y/q/Yo\nUtLntQOcABH3fw==\n-----END CERTIFICATE-----\n"
+            },
+            "kind": "ConfigMap",
+            "metadata": {
+                "annotations": {
+                    "kubernetes.io/description": "Contains a CA bundle that can be used to verify the kube-apiserver when using internal endpoints such as the internal service IP or kubernetes.default.svc. No other usage is guaranteed across distributions of Kubernetes clusters."
+                },
+                "creationTimestamp": "2026-10-22T00:07:03Z",
+                "name": "kube-root-ca.crt",
+                "namespace": "ops-lab",
+                "resourceVersion": "368",
+                "uid": "c583af5a-c147-46c6-944f-77c941bff2d0"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

@@ -1,0 +1,2 @@
+[pod/rotas-fc7784c5c-g26nv/rotas] RotaExpress em http://localhost:8000
+[pod/rotas-fc7784c5c-n7rh9/rotas] 

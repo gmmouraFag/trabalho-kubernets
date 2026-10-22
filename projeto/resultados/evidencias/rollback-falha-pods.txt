@@ -1,0 +1,110 @@
+Name:             rotas-9687f8dc8-lrx2p
+Namespace:        ops-lab
+Priority:         0
+Service Account:  default
+Node:             ops-lab/192.168.49.2
+Start Time:       Wed, 21 Oct 2026 21:28:04 -0300
+Labels:           app=rotas
+                  pod-template-hash=9687f8dc8
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.29
+IPs:
+  IP:           10.244.0.29
+Controlled By:  ReplicaSet/rotas-9687f8dc8
+Containers:
+  rotas:
+    Container ID:   
+    Image:          rotas:1.1
+    Image ID:       
+    Port:           8000/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ErrImagePull
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:        500m
+      memory:     64Mi
+    Liveness:     http-get http://:8000/healthz delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:    http-get http://:8000/readyz delay=0s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-h4p79 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-h4p79:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+
+Name:             rotas-fc7784c5c-n7rh9
+Namespace:        ops-lab
+Priority:         0
+Service Account:  default
+Node:             ops-lab/192.168.49.2
+Start Time:       Wed, 21 Oct 2026 21:08:40 -0300
+Labels:           app=rotas
+                  pod-template-hash=fc7784c5c
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.6
+IPs:
+  IP:           10.244.0.6
+Controlled By:  ReplicaSet/rotas-fc7784c5c
+Containers:
+  rotas:
+    Container ID:   containerd://aba40f15f48cbd922b1d4214abb23f894df07840f43838f67c9d861373cac99b
+    Image:          rotas:1.0
+    Image ID:       sha256:fbce9bb38e4e6f286b977e7a032a7d9b3ac6566824d781b0fd6ee4c012c508ba
+    Port:           8000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 21 Oct 2026 21:08:41 -0300
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:        500m
+      memory:     64Mi
+    Liveness:     http-get http://:8000/healthz delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:    http-get http://:8000/readyz delay=0s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-rmjwn (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-rmjwn:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s

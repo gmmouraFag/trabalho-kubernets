@@ -1,0 +1,28 @@
+--- 2026-10-21T21:25:38.6056615-03:00
+NAME                    CPU(cores)   MEMORY(bytes)   
+rotas-fc7784c5c-g26nv   301m         14Mi            
+rotas-fc7784c5c-n7rh9   303m         14Mi            
+--- 2026-10-21T21:25:54.0432802-03:00
+NAME                    CPU(cores)   MEMORY(bytes)   
+rotas-fc7784c5c-g26nv   301m         14Mi            
+rotas-fc7784c5c-n7rh9   303m         14Mi            
+--- 2026-10-21T21:26:09.4899100-03:00
+NAME                    CPU(cores)   MEMORY(bytes)   
+rotas-fc7784c5c-g26nv   301m         14Mi            
+rotas-fc7784c5c-n7rh9   303m         14Mi            
+--- 2026-10-21T21:26:24.9286710-03:00
+NAME                    CPU(cores)   MEMORY(bytes)   
+rotas-fc7784c5c-g26nv   301m         14Mi            
+rotas-fc7784c5c-n7rh9   303m         14Mi            
+--- 2026-10-21T21:26:40.3967804-03:00
+NAME                    CPU(cores)   MEMORY(bytes)   
+carga-cl9lw             14m          22Mi            
+rotas-fc7784c5c-g26nv   158m         14Mi            
+rotas-fc7784c5c-n7rh9   175m         13Mi            
+rotas-fc7784c5c-vh829   194m         13Mi            
+--- 2026-10-21T21:26:55.8505144-03:00
+NAME                    CPU(cores)   MEMORY(bytes)   
+carga-cl9lw             14m          22Mi            
+rotas-fc7784c5c-g26nv   158m         14Mi            
+rotas-fc7784c5c-n7rh9   175m         13Mi            
+rotas-fc7784c5c-vh829   194m         13Mi            

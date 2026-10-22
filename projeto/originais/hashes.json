@@ -1,0 +1,8 @@
+{
+  ".dockerignore": "1da3a93780f57bbc3f5178eb2866b97c9cd37a0a9ec2d03e17c17c4440617606",
+  "app.py": "b20a4d9bf018252c1d63336262ad74c2d9a0bbcf198f51dfac7e1134fdeeef4e",
+  "carga.js": "c73b6bb67e7bcca0e53e2f223cd31529970e83e115510b21c23e42e3a8e391b2",
+  "Dockerfile": "ac77af28153dd252d25ea9e69828d66fa0898a23cd128b715bb8ce3e918019ec",
+  "README.md": "5eea5573f362a30aac478244b0b4c47fff44191ddd56e6d90197f7af18a2eb88",
+  "resultados_modelo.csv": "43d8c6093e2ed43845f5de7e3eb3eaa16205f2b41ced91b07bc3fce5f7bf45c2"
+}

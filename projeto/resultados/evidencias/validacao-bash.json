@@ -1,0 +1,42 @@
+[
+  {
+    "Arquivo": "comum.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  },
+  {
+    "Arquivo": "encerrar-ambiente.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  },
+  {
+    "Arquivo": "executar-testes.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  },
+  {
+    "Arquivo": "iniciar-cluster.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  },
+  {
+    "Arquivo": "instalar-dependencias.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  },
+  {
+    "Arquivo": "publicar-aplicacao.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  },
+  {
+    "Arquivo": "validar-aplicacao.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  },
+  {
+    "Arquivo": "verificar-ambiente.sh",
+    "SintaxeValida": true,
+    "ExecucaoLinux": "Nao executado neste host Windows"
+  }
+]

@@ -1,0 +1,48 @@
+**********************
+PowerShell transcript start
+Start time: 20261021213220
+Username: DESKTOP-H3I4SRO\Gustavo
+RunAs User: DESKTOP-H3I4SRO\Gustavo
+Configuration Name: 
+Machine: DESKTOP-H3I4SRO (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Users\Cliente\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+. '.\scripts\comum.ps1'; Start-Transcript -Path 'resultados/evidencias/encerramento.txt'; try { Save-K 'antes-encerramento.json' @('get','deployment,pods,service,configmap','-o','json'); . '.\scripts\encerrar-ambiente.ps1' -LimparNamespace; & minikube status -p ops-lab | Out-Host; & minikube status -p ops-lab -o json | Set-Content 'resultados/evidencias/cluster-encerrado.json' -Encoding utf8 } finally {Stop-Transcript}
+Process ID: 18344
+PSVersion: 7.6.5
+PSEdition: Core
+GitCommitId: 7.6.5
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is resultados/evidencias/encerramento.txt
+> minikube status -p ops-lab
+ops-lab
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+> kubectl --context=ops-lab --namespace=ops-lab delete namespace ops-lab
+Warning: deleting cluster-scoped resources, not scoped to the provided namespace
+namespace "ops-lab" deleted
+> minikube stop -p ops-lab
+* Stopping node "ops-lab"  ...
+* Powering off "ops-lab" via SSH ...
+* 1 node stopped.
+Cluster parado. O perfil foi preservado. Use iniciar-cluster.ps1 para retomar.
+ops-lab
+type: Control Plane
+host: Stopped
+kubelet: Stopped
+apiserver: Stopped
+kubeconfig: Stopped
+
+**********************
+PowerShell transcript end
+End time: 20261021213312
+**********************

@@ -1,0 +1,26 @@
+[
+  {
+    "replicas": 1,
+    "cpu_reservada": 0.5,
+    "sucessos_por_s": 2.2333333333333334,
+    "falhas_pct": 62.88,
+    "p95_latencia_ok_ms": 387.96,
+    "dropped_iterations_medicao": 0.0
+  },
+  {
+    "replicas": 2,
+    "cpu_reservada": 1.0,
+    "sucessos_por_s": 3.533333333333333,
+    "falhas_pct": 41.27,
+    "p95_latencia_ok_ms": 382.28,
+    "dropped_iterations_medicao": 0.0
+  },
+  {
+    "replicas": 3,
+    "cpu_reservada": 1.5,
+    "sucessos_por_s": 4.066666666666666,
+    "falhas_pct": 32.4,
+    "p95_latencia_ok_ms": 380.58,
+    "dropped_iterations_medicao": 0.0
+  }
+]

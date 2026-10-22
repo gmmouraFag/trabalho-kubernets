@@ -1,0 +1,2 @@
+NAME                              READY   STATUS    RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+metrics-server-768f9f6999-8fbwj   1/1     Running   0          22m   10.244.0.3   ops-lab   <none>           <none>

@@ -1,0 +1,35 @@
+# Ferramentas e ambientes locais
+**/.ferramentas/
+**/.venv/
+**/venv/
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+**/.build-apresentacao/
+**/.chart-data-*/
+# Segredos e configuração pessoal
+.env
+.env.*
+!.env.example
+**/.kube/
+**/.docker/
+*.pem
+*.key
+*.pfx
+*.p12
+# Arquivos locais e pacotes gerados
+*.lock
+*.zip
+Thumbs.db
+desktop.ini
+.DS_Store
+# Diagnóstico pessoal; manter no computador, fora do GitHub
+projeto/resultados/evidencias/diagnostico.json
+projeto/resultados/evidencias/inventario-inicial.csv
+projeto/resultados/evidencias/kubelet-config.json
+projeto/resultados/evidencias/docker-node-hostconfig.json
+projeto/resultados/evidencias/imagem-docker.json
+projeto/resultados/logs/diagnostico-*.txt
+projeto/resultados/logs/verificacao-pos-reinicio.txt
+# Publicação Git não é evidência do experimento
+PUBLICACAO_LOCAL.json
