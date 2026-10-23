@@ -4,6 +4,8 @@ Este repositório reúne a aplicação fornecida pelo professor, a infraestrutur
 
 **Comece por [estudo/00-plano-de-estudo.md](estudo/00-plano-de-estudo.md).** Você não precisa entender todos os arquivos de uma vez.
 
+**Para explicar o código ao professor, abra o [guia do código para a defesa](estudo/05-codigo-explicado-para-defesa.md).** Ele acompanha as funções Python, a tela, o teste k6, Docker, os manifestos e a automação, com exemplos e perguntas respondidas.
+
 ## Caminho de leitura
 
 1. [Plano de estudo: sete encontros](estudo/00-plano-de-estudo.md).
@@ -11,6 +13,7 @@ Este repositório reúne a aplicação fornecida pelo professor, a infraestrutur
 3. [Exercícios práticos com respostas esperadas](estudo/02-laboratorio-guiado.md).
 4. [Preparação do outro notebook Windows 11](estudo/03-outro-notebook.md).
 5. [Revisão e perguntas para a defesa](estudo/04-revisao-e-defesa.md).
+6. [Código explicado: funções, fluxo e roteiro para a defesa](estudo/05-codigo-explicado-para-defesa.md).
 
 ## O que foi realizado
 

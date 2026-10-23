@@ -8,6 +8,8 @@ A atividade do professor pede os manifestos, os logs, a tabela comparativa e uma
 
 ## Como estudar sem se perder
 
+Se sua prioridade é explicar o código ao professor, siga o [guia do código para a defesa](05-codigo-explicado-para-defesa.md), com o arquivo original aberto ao lado. Ele contém um plano de três dias, explicações por função, perguntas com respostas e um roteiro de apresentação.
+
 Separe sete sessões de aproximadamente uma hora. Se tiver pouco tempo, faça duas por dia com uma pausa. Leia apenas os trechos indicados. Depois feche o texto e explique em voz alta. Ao executar comandos, observe a saída antes de passar ao próximo. Marque os critérios somente quando conseguir mostrar ou explicar o resultado.
 
 | Sessão | Tempo | Você estuda | Você pratica | Critério para seguir |
